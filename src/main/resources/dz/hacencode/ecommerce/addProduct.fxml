@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="745.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dz.hacencode.ecommerce.addProductController">
+   <children>
+      <VBox layoutX="7.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="1094.0" style="-fx-background-radius: 20px; -fx-background-color: #81ecec;" text="Add Product">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="426.0" prefWidth="1272.0">
+                     <children>
+                        <VBox prefHeight="426.0" prefWidth="438.0" style="-fx-background-radius: 20px;">
+                           <children>
+                              <JFXButton alignment="CENTER" onAction="#newProduct" prefHeight="31.0" prefWidth="116.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20PX;" text="New product" textAlignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="PLUS" size="30" />
+                                 </graphic>
+                              </JFXButton>
+                              <VBox layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <Label text="Category">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXComboBox fx:id="_category" onAction="#selectCategory" prefHeight="38.0" prefWidth="360.0" />
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Label text="Barre code">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <TextField fx:id="_bareCode" onKeyPressed="#focusInput" prefHeight="35.0" prefWidth="330.0">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </TextField>
+                                          <JFXButton alignment="CENTER" onAction="#generateNewCodeBarre" prefHeight="31.0" prefWidth="116.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20PX;" text="." textAlignment="CENTER">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="QRCODE" size="25" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Label text="Product name">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="_productName" onKeyPressed="#focusInput" prefHeight="35.0" prefWidth="330.0">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox prefHeight="106.0" prefWidth="360.0">
+                                 <children>
+                                    <Label text="Product description">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextArea fx:id="_productDesc" onKeyReleased="#focusInput" prefHeight="71.0" prefWidth="339.0" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox prefHeight="66.0" prefWidth="350.0">
+                                 <children>
+                                    <Label text="Price">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="_price" onKeyPressed="#focusInput" prefHeight="35.0" prefWidth="330.0">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Label text="Quantity">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="_quantity" onKeyPressed="#focusInput" prefHeight="35.0" prefWidth="330.0">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <HBox prefHeight="23.0" prefWidth="395.0">
+                                 <children>
+                                    <JFXButton alignment="CENTER" onAction="#saveProduct" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20PX;" text="Save" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="SAVE" size="30" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" prefHeight="38.0" prefWidth="89.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 20PX;" text="Edit" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="EDIT" size="30" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 20PX;" text="Remove" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="REMOVE" size="30" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="410.0" prefWidth="550.0" style="-fx-background-radius: 20px;">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="550.0" text="Barre Code">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="20.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Pane style="-fx-background-color: #ecf0f1; -fx-background-radius: 20px;">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="40.0" right="40.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fx:id="barCodeImageView" fitHeight="262.0" fitWidth="320.0" layoutX="31.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </padding>
+                              </Pane>
+                              <HBox prefHeight="42.0" prefWidth="446.0">
+                                 <children>
+                                    <JFXButton alignment="CENTER" onAction="#generateBareCode" prefHeight="23.0" prefWidth="127.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20PX;" text="Generate" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="QRCODE" size="30" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" onAction="#printBareCode" prefHeight="22.0" prefWidth="118.0" style="-fx-background-color: #f1c40f; -fx-background-radius: 20PX;" text="Print" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="PRINT" size="30" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="370.0" layoutY="10.0" prefHeight="413.0" prefWidth="518.0" style="-fx-background-radius: 20px;">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="550.0" text="Photo">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="20.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <Pane style="-fx-background-color: #ecf0f1; -fx-background-radius: 20px;">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="40.0" right="40.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fx:id="myImageView" fitHeight="289.0" fitWidth="339.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Pane>
+                              <JFXButton alignment="CENTER" onAction="#UploadImageActionPerformed" prefHeight="38.0" prefWidth="145.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20PX;" text="Upload" textAlignment="CENTER">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="UPLOAD" size="30" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="200.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="251.0" prefWidth="1272.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <JFXButton alignment="CENTER" onAction="#getAllProduct" prefHeight="33.0" prefWidth="67.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 20PX;" text="." textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="REFRESH" size="20" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <Label fx:id="nameLabel1" prefHeight="30.0" prefWidth="1063.0" style="-fx-background-radius: 20px; -fx-background-color: #81ecec;" text="List of products">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="_tableProduct" editable="true" onMousePressed="#selectPhoto" prefHeight="218.0" prefWidth="1123.0">
+                     <columns>
+                        <TableColumn fx:id="productID" prefWidth="35.0" text="N°" />
+                        <TableColumn fx:id="barcode" prefWidth="167.0" text="BarCode" />
+                        <TableColumn fx:id="productName" prefWidth="186.0" text="Product" />
+                        <TableColumn fx:id="price" prefWidth="503.0" text="Price" />
+                        <TableColumn fx:id="quantity" minWidth="0.0" prefWidth="188.0" text="Qte" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

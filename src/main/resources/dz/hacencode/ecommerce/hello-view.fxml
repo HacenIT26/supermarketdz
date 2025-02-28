@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" prefHeight="450.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dz.hacencode.ecommerce.HelloController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0">
+         <children>
+            <Pane layoutX="375.2" layoutY="15.0" prefHeight="370.0" prefWidth="597.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="375.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <VBox layoutX="88.0" layoutY="92.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="userName" onKeyPressed="#onFocus" prefHeight="49.0" prefWidth="360.0" promptText="UserName">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></TextField>
+                        <PasswordField fx:id="password" onKeyPressed="#onFocus" prefHeight="49.0" prefWidth="360.0" promptText="Password">
+                           <font>
+                              <Font size="18.0" />
+                           </font></PasswordField>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="127.0" layoutY="226.0" spacing="10.0">
+                     <children>
+                        <JFXButton fx:id="login" buttonType="RAISED" onAction="#onHelloButtonClick" prefHeight="37.0" prefWidth="136.0" ripplerFill="#ae1919" style="-fx-background-color: #3498db;" text="Login" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#onHelloButtonClick" prefHeight="37.0" prefWidth="136.0" ripplerFill="#ae1919" style="-fx-background-color: #ff4757;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="15.0" prefHeight="370.0" prefWidth="348.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <ImageView fitHeight="253.0" fitWidth="304.0" layoutX="20.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/shop.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="82.0" layoutY="35.0" prefHeight="43.0" prefWidth="184.0" text="Shopping DZ" textFill="#1903a9">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
