@@ -1,4 +1,4 @@
-#Supermarket application using javafx and mysql.
+# Supermarket application using javafx and mysql.
 ## Features:
 - Add new product
 * Upload photo for each product
